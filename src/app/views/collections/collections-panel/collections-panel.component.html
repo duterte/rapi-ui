@@ -1,0 +1,6 @@
+<div class="flex bg-green-500 text-white border-2 border-green-500 rounded-md max-w-4xl mx-auto mt-5">
+  <app-select-primary class="flex-initial" [options]="options" (valueChange)="selectMethodEvent($event)"></app-select-primary>
+  <app-input-text class="flex-auto"></app-input-text>
+  <app-button-primary (click)="sendRequestEvent()">Send</app-button-primary>
+</div>
+<app-horizontal-tab class="absolute bottom-0 w-full mb-2 mx-2" [tabs]="tabs" (btnClick)="changeTabEvent($event)"></app-horizontal-tab>

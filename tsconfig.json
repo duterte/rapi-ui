@@ -5,7 +5,9 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "strict": true,
+    "noImplicitAny": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -21,8 +23,14 @@
     "useDefineForClassFields": false,
     "lib": [
       "ES2022",
-      "dom"
-    ]
+      "dom",
+    ],
+    "paths": {
+      "@models/*": ["src/app/models/*"],
+      "@services/*": ["./src/app/services/*"],
+      "@views/*": ["./src/app/views/*"],
+      "@components/*": ["./src/app/components/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

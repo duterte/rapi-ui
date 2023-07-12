@@ -1,0 +1,21 @@
+<div class="h-[4%] drop-shadow-xl border-b pl-2">
+  <span class="font-medium text-xs text-slate-500">Explorer</span>
+</div>
+<div class="h-[84%] overflow-auto">
+  <div
+  app-explorer-object
+  class="select-none relative cursor-pointer h-[30px]"
+  *ngFor="let currentObject of explorerObjects; "
+  [id]="currentObject.id"
+  [parentId]="currentObject.parentId"
+  [label]="currentObject.label"
+  [hasChildren]="currentObject.hasChildren"
+  [collapse]="currentObject.collapse"
+  [objectType]="currentObject.objectType"
+  [objectIndent]="currentObject.objectIndent"
+  [ngClass]="{hidden: currentObject.hide}"
+  (click)="clickEvent(currentObject)"
+  >
+</div>
+
+</div>
