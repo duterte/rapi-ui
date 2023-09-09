@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ButtonPrimaryComponent } from './buttons/button-primary.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectPrimaryComponent } from './selects/select-primary.component';
 import { InputTextComponent } from './inputs/input-text.component';
 import { TableComponent } from './table/table.component';
@@ -14,6 +14,12 @@ import { BiChevronRightComponent } from './icons/bi-chevron-right.component';
 import { BiChevronDownComponent } from './icons/bi-chevron-down.component';
 import { BiFolderFillComponent } from './icons/bi-folder-fill.component';
 import { BiGripVerticalComponent } from './icons/bi-grip-vertical.component';
+import { BiFolderPlusComponent } from './icons/bi-folder-plus.component';
+import { BiFilePlusComponent } from './icons/bi-file-plus.component';
+import { BiFileEarmarkPlusComponent } from './icons/bi-file-earmark-plus.component';
+import { BiArrowClockwiseComponent } from './icons/bi-arrow-clockwise.component';
+import { CodeEditorComponent } from './code-editor/code-editor.component';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 
 @NgModule({
@@ -30,8 +36,13 @@ import { BiGripVerticalComponent } from './icons/bi-grip-vertical.component';
     BiChevronDownComponent,
     BiFolderFillComponent,
     BiGripVerticalComponent,
+    BiFolderPlusComponent,
+    BiFilePlusComponent,
+    BiFileEarmarkPlusComponent,
+    BiArrowClockwiseComponent,
+    CodeEditorComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, CodemirrorModule, FormsModule],
   exports: [
     ButtonPrimaryComponent,
     SelectPrimaryComponent,
@@ -45,6 +56,11 @@ import { BiGripVerticalComponent } from './icons/bi-grip-vertical.component';
     BiChevronDownComponent,
     BiFolderFillComponent,
     BiGripVerticalComponent,
+    BiFolderPlusComponent,
+    BiFilePlusComponent,
+    BiFileEarmarkPlusComponent,
+    BiArrowClockwiseComponent,
+    CodeEditorComponent,
   ],
 })
 export class ComponentModule {}

@@ -1,0 +1,10 @@
+<!-- <ngx-codemirror #codemirror class="border border-red-500 h-full"
+></ngx-codemirror> -->
+
+<ngx-codemirror #codemirror
+  [options]="options"
+  [(ngModel)]="data"
+  (ngModelChange)="setEditorContent($event)"
+  class="inline-block h-full w-full"
+>
+</ngx-codemirror>

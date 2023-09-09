@@ -1,7 +1,8 @@
 
 export type RequestMethod = '' | 'GET' | 'POST' | 'PUT' | 'DELETE'
-export type CollectionsTab = '' | 'Parameters' | 'Headers' | 'Body';
+export type CollectionsTab = '' | 'Request' | 'Response' | 'Parameters' | 'Headers' | 'Body';
 export type ExplorerObjectType = 'folder' | 'file' | 'root'
+export type ObjectStatus = 'idle' | 'active';
 
 export interface SubProperty {
   id: string | number;
@@ -27,6 +28,8 @@ export interface ExplorerObject {
   label: string;
   collapse: boolean;
   hide: boolean;
+  status: ObjectStatus;
+  selected: boolean
   hasChildren: boolean;
   objectType: ExplorerObjectType;
   objectIndent: number;

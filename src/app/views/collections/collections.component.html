@@ -2,4 +2,5 @@
 <app-collections-panel class="relative container rounded-sm col-start-3 col-end-13 shadow-lg bg-white"></app-collections-panel>
 <app-collections-viewport class="relative container rounded-sm p-5 row-span-5 col-start-3 col-end-13 shadow-lg bg-white">
   <app-table *ngIf="['Parameters', 'Headers'].includes(activeTab)"></app-table>
+  <app-code-editor *ngIf="['Body'].includes(activeTab)"></app-code-editor>
 </app-collections-viewport>

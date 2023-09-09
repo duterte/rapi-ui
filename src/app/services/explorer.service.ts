@@ -105,7 +105,9 @@ export class ExplorerService {
         hasChildren: hasChildren,
         label: name,
         objectIndent: indent,
-        objectType: type
+        objectType: type,
+        selected: false,
+        status: 'idle'
       };
 
       switch (type) {

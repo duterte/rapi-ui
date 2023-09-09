@@ -3,3 +3,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@import 'codemirror/lib/codemirror';
+@import 'codemirror/addon/lint/lint';
+@import 'codemirror/addon/hint/show-hint';
+@import 'codemirror/theme/material';
+
+
+.CodeMirror {
+  height: 100%;
+}

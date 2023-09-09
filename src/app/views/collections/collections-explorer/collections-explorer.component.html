@@ -1,10 +1,16 @@
-<div class="h-[4%] drop-shadow-xl border-b pl-2">
+<div class="h-[25px] drop-shadow-xl border-b pl-2">
   <span class="font-medium text-xs text-slate-500">Explorer</span>
+</div>
+<div class="pl-2 flex mt-1">
+  <span class="font-medium text-xs text-slate-500 flex-1"></span>
+  <app-bi-folder-plus class="ml-1" title="New Folder"></app-bi-folder-plus>
+  <app-bi-file-earmark-plus class="ml-1" title="New File"></app-bi-file-earmark-plus>
+  <app-bi-arrow-clockwise class="ml-1" title="Refresh"></app-bi-arrow-clockwise>
 </div>
 <div class="h-[84%] overflow-auto">
   <div
   app-explorer-object
-  class="select-none relative cursor-pointer h-[30px]"
+  class="select-none relative cursor-pointer h-[30px] hover:bg-slate-100"
   *ngFor="let currentObject of explorerObjects; "
   [id]="currentObject.id"
   [parentId]="currentObject.parentId"
@@ -13,8 +19,11 @@
   [collapse]="currentObject.collapse"
   [objectType]="currentObject.objectType"
   [objectIndent]="currentObject.objectIndent"
-  [ngClass]="{hidden: currentObject.hide}"
   (click)="clickEvent(currentObject)"
+  [ngClass]="{
+    hidden: currentObject.hide,
+    'bg-slate-100': currentObject.selected || currentObject.status === 'active'
+  }"
   >
 </div>
 

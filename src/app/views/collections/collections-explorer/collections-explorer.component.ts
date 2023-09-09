@@ -7,7 +7,7 @@ import { ExplorerService } from '@services/explorer.service';
   templateUrl: './collections-explorer.component.html',
 })
 export class CollectionsExplorerComponent implements OnInit {
-  public explorerObjects: ExplorerObject[] = [];
+  protected explorerObjects: ExplorerObject[] = [];
 
   constructor(private explorer: ExplorerService) {}
 
@@ -34,7 +34,7 @@ export class CollectionsExplorerComponent implements OnInit {
   }
 
   private childObjects(parentObject: ExplorerObject): void {
-    this.explorerObjects.map((currentObject: ExplorerObject) => {
+    this.explorerObjects.forEach((currentObject: ExplorerObject) => {
       if (currentObject.parentId === parentObject.id) {
         currentObject.hide = !parentObject.collapse;
         this.inheritProperty(currentObject);
@@ -47,8 +47,17 @@ export class CollectionsExplorerComponent implements OnInit {
     this.childObjects(currentObject);
   }
 
+  private setStatus(currentObject: ExplorerObject) {
+
+    this.explorerObjects.forEach((explorerObject: ExplorerObject) => {
+      if(explorerObject.id === currentObject.id) explorerObject.status = 'active';
+      else explorerObject.status = 'idle';
+    });
+  }
   protected clickEvent(currentObject: ExplorerObject): void {
     this.toggleCollapse(currentObject);
+    this.setStatus(currentObject)
+
   }
 
   protected trackByFn(index: number, explorerObject: ExplorerObject) {

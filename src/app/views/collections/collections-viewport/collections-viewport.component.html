@@ -1,8 +1,9 @@
 <div class="h-7">
-  <span *ngIf="activeTab !== ''" class="font-medium text-xs text-slate-500">{{activeTab}}</span>
+  <span class="font-medium text-xs text-slate-500">Viewport</span>
+  <!-- <span *ngIf="activeTab !== ''" class="font-medium text-xs text-slate-500">{{activeTab}}</span> -->
 </div>
 <hr/>
-<div class="container mt-5 h-[92%] overflow-hidden">
+<div class="container h-[100%] overflow-hidden">
   <ng-content></ng-content>
 </div>
-<div class="text-xs font-thin text-right">Created by: German D. Ochea</div>
+<div class="text-xs font-thin absolute bottom-0 right-0">Created by: German D. Ochea</div>
